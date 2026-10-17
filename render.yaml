@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: gods-eye-view
+    env: node
+    region: oregon
+    branch: main
+    buildCommand: "npm install && npm run build"
+    startCommand: "npm run preview -- --host 0.0.0.0 --port $PORT"
+    envVars:
+      - key: NODE_VERSION
+        value: 24
+      - key: PORT
+        value: 10000
